@@ -21,6 +21,9 @@ cont.app.controller('cranecontroller', function ($scope) {
                             
                         }
                         $("#heightAmount").val(val);
+                    },
+                    stop:function(event, ui){
+                        //send value off to device
                     }
                 },
                 function () {}
@@ -41,6 +44,9 @@ cont.app.controller('cranecontroller', function ($scope) {
                             
                         }
                         $("#nsAmount").val(val);
+                    },
+                    stop:function(event, ui){
+                        //send value off to device
                     }
                 },
                 function () {}
@@ -62,6 +68,9 @@ cont.app.controller('cranecontroller', function ($scope) {
                             
                         }
                         $("#ewAmount").val(val);
+                    },
+                    stop:function(event, ui){
+                        //send value off to device
                     }
                 },
                 function () {}
