@@ -4,34 +4,37 @@
 <table id="craneControlLayout">
     <tr>
         <td>
-            North South
+            <span>FORWARD</span>
             <div id="slider-ns"></div>
+            <span>BACKWARD</span>
         </td>
         <td>
             <div id="infoPanel">
                 <div id="heightPanel">
                     <label for="heightAmount">Height:</label>
-                    <input type="text" id="heightAmount" readonly style="border:0; color:#f6931f; font-weight:bold;">
+                    <input type="text" id="heightAmount" readonly>
                 </div>
                 <div id="ewPanel">
-                    <label for="ewAmount">East West:</label>
-                    <input type="text" id="ewAmount" readonly style="border:0; color:#f6931f; font-weight:bold;"> 
+                    <label for="ewAmount">Left Right:</label>
+                    <input type="text" id="ewAmount" readonly> 
                 </div>
                 <div id="nsPanel">
-                    <label for="nsAmount">North South:</label>
-                    <input type="text" id="nsAmount" readonly style="border:0; color:#f6931f; font-weight:bold;"> 
+                    <label for="nsAmount">Forward backward:</label>
+                    <input type="text" id="nsAmount" readonly> 
                 </div>
             </div>
         </td>
         <td>
-            Height
+            <span>UP</span>
             <div id="slider-vertical"></div>
+            <span>DOWN</span>
         </td>
     </tr>
     <tr>
-        <td colspan="3">
-            East West
-            <div id="slider-ew"></div>
+        <td colspan="3" id="ewSliderTd">
+            
+                <div id="slider-ew"></div>
+            
         </td>
     </tr>
 </table>
