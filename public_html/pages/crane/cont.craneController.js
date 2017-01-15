@@ -2,16 +2,25 @@ var cont = cont || {};
 cont.app.controller('cranecontroller', function ($scope) {
 
     $(function () {
+        var max = 200;
+        
         cont.dom.slider.generate(
                 "#slider-vertical",
                 {
                     orientation: "vertical",
                     range: "min",
                     min: 0,
-                    max: 100,
-                    value: 60,
+                    max: max,
+                    value: 100,
                     slide: function (event, ui) {
-                        $("#heightAmount").val(ui.value);
+                        var val = max;//default
+                        try{
+                            var valString = ui.value;
+                            val = parseInt(valString)-(max/2);
+                        }catch(e){
+                            
+                        }
+                        $("#heightAmount").val(val);
                     }
                 },
                 function () {}
@@ -21,10 +30,17 @@ cont.app.controller('cranecontroller', function ($scope) {
                 {
                     range: "min",
                     min: 0,
-                    max: 100,
-                    value: 60,
+                    max: max,
+                    value: 100,
                     slide: function (event, ui) {
-                        $("#nsAmount").val(ui.value);
+                        var val = max;//default
+                        try{
+                            var valString = ui.value;
+                            val = parseInt(valString)-(max/2);
+                        }catch(e){
+                            
+                        }
+                        $("#nsAmount").val(val);
                     }
                 },
                 function () {}
@@ -32,13 +48,20 @@ cont.app.controller('cranecontroller', function ($scope) {
         cont.dom.slider.generate(
                 "#slider-ew",
                 {
-                    orientation: "vertical",
+                   orientation: "vertical",
                     range: "min",
                     min: 0,
-                    max: 100,
-                    value: 60,
+                    max: max,
+                    value: 100,
                     slide: function (event, ui) {
-                        $("#ewAmount").val(ui.value);
+                        var val = max;//default
+                        try{
+                            var valString = ui.value;
+                            val = parseInt(valString)-(max/2);
+                        }catch(e){
+                            
+                        }
+                        $("#ewAmount").val(val);
                     }
                 },
                 function () {}
