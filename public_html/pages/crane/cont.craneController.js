@@ -1,6 +1,16 @@
 var cont = cont || {};
 cont.app.controller('cranecontroller', function ($scope) {
 
+    var sliders = [];
+
+    $scope.reset = function () {
+        //console.log(sliders);
+        for(var i = 0; i<sliders.length; i++){
+            sliders[i].slider.slider({value:100});
+            sliders[i].textElem.val(0);
+        }
+    };
+
     $(function () {
         var max = 200;
         $("#heightAmount").val("0");
@@ -16,19 +26,21 @@ cont.app.controller('cranecontroller', function ($scope) {
                     value: 100,
                     slide: function (event, ui) {
                         var val = max;//default
-                        try{
+                        try {
                             var valString = ui.value;
-                            val = parseInt(valString)-(max/2);
-                        }catch(e){
-                            
+                            val = parseInt(valString) - (max / 2);
+                        } catch (e) {
+
                         }
                         $("#heightAmount").val(val);
                     },
-                    stop:function(event, ui){
+                    stop: function (event, ui) {
                         //send value off to device
                     }
                 },
-                function () {}
+                function (thisSlider) {
+                    sliders.push({slider:thisSlider,textElem:$("#heightAmount")});
+                }
         );
         cont.dom.slider.generate(
                 "#slider-ns",
@@ -40,19 +52,21 @@ cont.app.controller('cranecontroller', function ($scope) {
                     value: 100,
                     slide: function (event, ui) {
                         var val = max;//default
-                        try{
+                        try {
                             var valString = ui.value;
-                            val = parseInt(valString)-(max/2);
-                        }catch(e){
-                            
+                            val = parseInt(valString) - (max / 2);
+                        } catch (e) {
+
                         }
                         $("#nsAmount").val(val);
                     },
-                    stop:function(event, ui){
+                    stop: function (event, ui) {
                         //send value off to device
                     }
                 },
-                function () {}
+                function (thisSlider) {
+                    sliders.push({slider:thisSlider,textElem:$("#nsAmount")});
+                }
         );
         cont.dom.slider.generate(
                 "#slider-ew",
@@ -63,19 +77,21 @@ cont.app.controller('cranecontroller', function ($scope) {
                     value: 100,
                     slide: function (event, ui) {
                         var val = max;//default
-                        try{
+                        try {
                             var valString = ui.value;
-                            val = parseInt(valString)-(max/2);
-                        }catch(e){
-                            
+                            val = parseInt(valString) - (max / 2);
+                        } catch (e) {
+
                         }
                         $("#ewAmount").val(val);
                     },
-                    stop:function(event, ui){
+                    stop: function (event, ui) {
                         //send value off to device
                     }
                 },
-                function () {}
+                function (thisSlider) {
+                    sliders.push({slider:thisSlider,textElem:$("#ewAmount")});
+                }
         );
     });
 });
