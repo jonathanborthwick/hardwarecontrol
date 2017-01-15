@@ -1,5 +1,48 @@
 /* 
     Created on : 14-Jan-2017, 6:02:40 AM
-    Author     : Jonathan
+    Author     : Jonathan Borthwick
 */
+body{
+    font-family: arial;
+}
+/* Sliders */
+#slider-vertical{
+    height:200px;
+    width:30px;
+}
+#slider-vertical .ui-slider-handle{
+    width:40px;
+}
 
+#slider-ns{
+    height:200px;
+    width:30px;
+}
+#slider-ns .ui-slider-handle{
+    width:40px;
+}
+
+#slider-ew{
+    width:300px;
+    height:30px;
+}
+#slider-ew .ui-slider-handle{
+    height:42px;
+}
+/* Panels */
+#infoPanel{
+    
+}
+#infoPanel label{
+    font-size: 16px;
+}
+
+#heightPanel{
+    
+}
+#ewPanel{
+    
+}
+#nsPanel{
+    
+}

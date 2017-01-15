@@ -3,7 +3,9 @@ cont.app.controller('cranecontroller', function ($scope) {
 
     $(function () {
         var max = 200;
-        
+        $("#heightAmount").val("0");
+        $("#nsAmount").val("0");
+        $("#ewAmount").val("0");
         cont.dom.slider.generate(
                 "#slider-vertical",
                 {
@@ -31,6 +33,7 @@ cont.app.controller('cranecontroller', function ($scope) {
         cont.dom.slider.generate(
                 "#slider-ns",
                 {
+                    orientation: "vertical",
                     range: "min",
                     min: 0,
                     max: max,
@@ -54,7 +57,6 @@ cont.app.controller('cranecontroller', function ($scope) {
         cont.dom.slider.generate(
                 "#slider-ew",
                 {
-                   orientation: "vertical",
                     range: "min",
                     min: 0,
                     max: max,

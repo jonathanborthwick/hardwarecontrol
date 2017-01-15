@@ -1,16 +1,42 @@
 <link href="./pages/crane/cont.crane.css" rel="stylesheet" type="text/css"/>
-<div id="slider-vertical" style="height:200px;"></div>
-<div id="slider-ns" style="width:200px;"></div>
-<div id="slider-ew" style="height:200px;"></div>
-<p>
-    <label for="heightAmount">Height:</label>
-    <input type="text" id="heightAmount" readonly style="border:0; color:#f6931f; font-weight:bold;">
-</p>
-<p>
-    <label for="nsAmount">North South:</label>
-    <input type="text" id="nsAmount" readonly style="border:0; color:#f6931f; font-weight:bold;"> 
-</p>
-<p>
-    <label for="ewAmount">East West:</label>
-    <input type="text" id="ewAmount" readonly style="border:0; color:#f6931f; font-weight:bold;"> 
-</p>
+<h2>Crane</h2>
+
+<table id="craneControlLayout">
+    <tr>
+        <td>
+            North South
+            <div id="slider-ns"></div>
+        </td>
+        <td>
+            <div id="infoPanel">
+                <div id="heightPanel">
+                    <label for="heightAmount">Height:</label>
+                    <input type="text" id="heightAmount" readonly style="border:0; color:#f6931f; font-weight:bold;">
+                </div>
+                <div id="ewPanel">
+                    <label for="ewAmount">East West:</label>
+                    <input type="text" id="ewAmount" readonly style="border:0; color:#f6931f; font-weight:bold;"> 
+                </div>
+                <div id="nsPanel">
+                    <label for="nsAmount">North South:</label>
+                    <input type="text" id="nsAmount" readonly style="border:0; color:#f6931f; font-weight:bold;"> 
+                </div>
+            </div>
+        </td>
+        <td>
+            Height
+            <div id="slider-vertical"></div>
+        </td>
+    </tr>
+    <tr>
+        <td colspan="3">
+            East West
+            <div id="slider-ew"></div>
+        </td>
+    </tr>
+</table>
+
+
+
+
+
