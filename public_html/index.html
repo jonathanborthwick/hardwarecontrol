@@ -1,42 +1,31 @@
 <!DOCTYPE html>
-<html data-ng-app="cont">
+<html>
     <head>
         <title>Controllers</title>
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <script src="scripts/lib/Angular/angular.js" type="text/javascript"></script>
-        <script src="scripts/lib/Angular/angular-route.js" type="text/javascript"></script>
-        
-        <script src="scripts/lib/jQuery/jquery.min.js" type="text/javascript"></script>
-    
-        <script src="scripts/lib/jQuery/jquery-ui.min.js" type="text/javascript"></script>
-        <script src="scripts/lib/jQuery/jquery.ui.touch-punch.min.js" type="text/javascript"></script>
-        <link href="style/lib/jQuery/jquery-ui.css" rel="stylesheet" type="text/css"/>
-        
-        <link href="style/cont/cont.header.css" rel="stylesheet" type="text/css"/>
-        <link href="style/cont/cont.icons.css" rel="stylesheet" type="text/css"/>
-        <link href="style/cont/cont.app.css" rel="stylesheet" type="text/css"/>
-        
+        <style>
+            .hide{
+                display:none;
+            }
+        </style>
+        <script type="text/javascript">
+            function loadJS(file) {
+                // DOM: Create the script element
+                var jsElm = document.createElement("script");
+                // set the type attribute
+                jsElm.type = "application/javascript";
+                // make the script element load file
+                jsElm.src = file;
+                // finally insert the element to the body element in order to load the script
+                document.body.appendChild(jsElm);
+            }
+        </script>
     </head>
-
     <body>
-        <div id="contContent">
-            <div id="headerDiv" ng-controller="contHeaderController">
-                <h2>{{header}}</h2>
-            </div>
-            <div class="mainContainer">
-                <div ng-view></div>
-            </div>
-        </div>
-        
-        <script src="scripts/cont/cont.app.js" type="text/javascript"></script>
-        <script src="scripts/cont/cont.app.config.js" type="text/javascript"></script>
-        <script src="scripts/cont/cont.data.js" type="text/javascript"></script>
-        <script src="scripts/cont/cont.dom.js" type="text/javascript"></script>
-        <script src="scripts/cont/cont.io.js" type="text/javascript"></script>
-        <!-- controllers -->
-        <script src="scripts/cont/cont.headerController.js" type="text/javascript"></script>
-        <script src="pages/crane/cont.craneController.js" type="text/javascript"></script>
     </body>
+    <script type="text/javascript">
+        loadJS("pages/crane/test.js");
+    </script>
 </html>
