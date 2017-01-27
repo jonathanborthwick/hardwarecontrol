@@ -1,4 +1,5 @@
-<link href="./pages/crane/cont.crane.css" rel="stylesheet" type="text/css"/>
+<link href="style/lib/jQuery/jquery-ui.css" rel="stylesheet" type="text/css"/>
+<link href="pages/crane/cont.crane.css" rel="stylesheet" type="text/css"/>
 <h2>Crane</h2>
 
 <table id="craneControlLayout">
@@ -22,7 +23,7 @@
                     <label for="nsAmount">Forward backward:</label>
                     <input type="text" id="nsAmount" readonly> 
                 </div>
-                <input type="button" value="RESET" title="Reset" ng-click="reset()"/>
+                <input type="button" value="RESET" title="Reset" onClick="cont.dom.slider.reset()"/>
             </div>
         </td>
         <td>
@@ -33,9 +34,9 @@
     </tr>
     <tr>
         <td colspan="3" id="ewSliderTd">
-            
-                <div id="slider-ew"></div>
-            
+
+            <div id="slider-ew"></div>
+
         </td>
     </tr>
 </table>

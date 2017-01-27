@@ -1,17 +1,27 @@
 var cont = cont || {};
-cont.app.controller('cranecontroller', function ($scope) {
 
-    var sliders = [];
+iJS("scripts/lib/jQuery/jquery.min.js", function () {
+    iJS("scripts/lib/jQuery/jquery-ui.min.js", function () {
+        iJS("scripts/lib/jQuery/jquery.ui.touch-punch.min.js", function () {
+            iJS("scripts/cont/cont.app.config.js", function () {
+                iJS("scripts/cont/cont.data.js", function () {
+                    iJS("scripts/cont/cont.dom.js", function () {
+                        iJS("scripts/cont/cont.io.js", function () {
+                            $(function () {
+                                initialize();
+                            });
+                        });
+                    });
+                });
+            });
+        });
+    });
+});
 
-    $scope.reset = function () {
-        //console.log(sliders);
-        for(var i = 0; i<sliders.length; i++){
-            sliders[i].slider.slider({value:100});
-            sliders[i].textElem.val(0);
-        }
-    };
-
-    $(function () {
+function initialize() {
+    $("#mainContent").load("pages/crane/crane.html", function () {
+        cont.dom.slider.sliders = [];
+        var sliders = cont.dom.slider.sliders;
         var max = 200;
         $("#heightAmount").val("0");
         $("#nsAmount").val("0");
@@ -39,7 +49,7 @@ cont.app.controller('cranecontroller', function ($scope) {
                     }
                 },
                 function (thisSlider) {
-                    sliders.push({slider:thisSlider,textElem:$("#heightAmount")});
+                    sliders.push({slider: thisSlider, textElem: $("#heightAmount")});
                 }
         );
         cont.dom.slider.generate(
@@ -65,7 +75,7 @@ cont.app.controller('cranecontroller', function ($scope) {
                     }
                 },
                 function (thisSlider) {
-                    sliders.push({slider:thisSlider,textElem:$("#nsAmount")});
+                    sliders.push({slider: thisSlider, textElem: $("#nsAmount")});
                 }
         );
         cont.dom.slider.generate(
@@ -90,8 +100,20 @@ cont.app.controller('cranecontroller', function ($scope) {
                     }
                 },
                 function (thisSlider) {
-                    sliders.push({slider:thisSlider,textElem:$("#ewAmount")});
+                    sliders.push({slider: thisSlider, textElem: $("#ewAmount")});
                 }
         );
     });
-});
+}
+
+
+
+
+
+
+
+
+
+
+
+

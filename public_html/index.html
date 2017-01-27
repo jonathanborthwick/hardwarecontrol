@@ -5,27 +5,17 @@
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <style>
-            .hide{
-                display:none;
-            }
-        </style>
+        <style>.hide{display:none;}</style>
         <script type="text/javascript">
-            function loadJS(file) {
-                // DOM: Create the script element
-                var jsElm = document.createElement("script");
-                // set the type attribute
-                jsElm.type = "application/javascript";
-                // make the script element load file
-                jsElm.src = file;
-                // finally insert the element to the body element in order to load the script
-                document.body.appendChild(jsElm);
+            function iJS(a, b) {
+                var c = document.createElement("script");
+                c.src = a, c.async = !0, c.onreadystatechange = c.onload = function () {
+                    "undefined" != typeof b && b()
+                }, document.querySelector("head").appendChild(c)
             }
         </script>
     </head>
-    <body>
+    <body onload="iJS('pages/crane/main.js')">
+        <div id="mainContent"></div>
     </body>
-    <script type="text/javascript">
-        loadJS("pages/crane/test.js");
-    </script>
 </html>
